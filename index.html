@@ -25,6 +25,16 @@
                 button.innerHTML='Check Combo'
             } else {
                 console.log('Checker')
+                const numbers=document.querySelectorAll('.numb')
+                for (let i = 0; i < numbers.length; i++) {
+                    if(numbers[i].value==numbers[i].correct){
+                        console.log("Matched")
+                    }else{
+                        console.log("Not Matched")
+                    }
+                    
+                }
+                console.log(numbers)
             }
         })
         function maker(){
@@ -36,9 +46,10 @@
             el.size=1
             el.style.width="50px"
             el.classList.add('numb')
+            el.correct=Math.floor(Math.random()*10)
+
             el.value=0
             el.order=1
-            console.log(el)
             gameArea.appendChild(el)
             }
         }
